@@ -1,11 +1,16 @@
+from re import S
+
+
 def dyvo_insert(sentence, flag):
     """
     Inserting word "диво" before every word that starts with flag.
+    >>> dyvo_insert("Кит кота по хвилях катав - кит у воді, кіт на киті", "ки")
+    'дивокит кота по хвилях катав - дивокит у воді, кіт на дивокиті'
     """
-    result = ""
-    for i in sentence.split(" "):
-        if i[0:2] == flag:
-            result += "диво " + i + " "
-        else:
-            result += i + " "
-    return result.strip()
+    result = " "
+    result += sentence.lower()
+    s = result.replace(" " + flag, " " + "диво" + flag)
+    return s.strip()
+
+import doctest
+print(doctest.testmod())
