@@ -1,5 +1,4 @@
-from re import S
-
+import doctest
 
 def dyvo_insert(sentence, flag):
     """
@@ -12,5 +11,4 @@ def dyvo_insert(sentence, flag):
     s = result.replace(" " + flag, " " + "диво" + flag)
     return s.strip()
 
-import doctest
 print(doctest.testmod())
